@@ -1,5 +1,6 @@
 require("dotenv").config()
 // --------------> allows the {.env} file
+
 const express = require("express");
 const PORT = process.env.PORT || 3000
 const connectToDb = require("./config/connectdb")
@@ -8,14 +9,12 @@ const mongoose = require('mongoose');
 const productRoute = require('./routes/product.route')
 
 const app = express();
-
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //routes
 app.use('/api/products', productRoute)
-
 app.get('/', (req, res) => {
     res.send("<h1>Hello from Node API Server</h1>");
 });
