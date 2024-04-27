@@ -6,7 +6,8 @@ const PORT = process.env.PORT || 3000
 const connectToDb = require("./config/connectdb")
 const Product = require('./models/product.model')
 const mongoose = require('mongoose');
-const productRoute = require('./routes/product.route')
+const productRoute = require('./routes/product.route');
+const categorieRoute = require('./routes/categorie.route')
 
 const app = express();
 //middleware
@@ -14,7 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //routes
-app.use('/api/products', productRoute)
+app.use('/api/products', productRoute);
+app.use('/api/categories', categorieRoute);
+
 app.get('/', (req, res) => {
     res.send("<h1>Hello from Node API Server</h1>");
 });
