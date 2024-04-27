@@ -1,5 +1,4 @@
 const Categorie = require('../models/categorie.model');
-const Product = require('../models/categorie.model')
 
 //Get All Categories
 const getCategories = async (req, res) => {
