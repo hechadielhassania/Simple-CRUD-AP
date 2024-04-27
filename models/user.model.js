@@ -1,4 +1,4 @@
-const { timeStamp } = require('console');
+const { timestamps } = require('console');
 const mongoose = require('mongoose');
 const { type } = require('os');
 
@@ -19,7 +19,7 @@ const UserSchema = mongoose.Schema(
         }
     },
     {
-        timeStamp: true
+        timestamps: true
     }
 );
 
